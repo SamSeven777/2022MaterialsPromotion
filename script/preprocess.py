@@ -27,7 +27,7 @@ logic = [
 			'音乐会', [
 				'第一排', [
 					'跟上去', 7, 
-					'离场',8
+					'离场', 8
 				],
 				'最后一排', 9
 			]
@@ -142,7 +142,7 @@ def process(li, name):
 		])
 		# construct choice
 		choice_element = [CHOICE]
-		num_choices = len(choices)
+		num_choices = 2
 		hspace = width / num_choices
 		per_hspace = (hspace - btn_w) / 2
 		for i in range(num_choices):
@@ -156,16 +156,6 @@ def process(li, name):
 		]
 	result.append(chapter)
 	return len(result) - 1
-
-# ins = [Image.open(txt_name.format('intro1')), Image.open(txt_name.format('intro2')), Image.open(txt_name.format('intro3'))]
-# mw = max(map(lambda x: x.size[0], ins))
-# th = sum(map(lambda x: x.size[1], ins)) + (len(ins) - 1) * space
-# inim = Image.new('RGBA', (mw, th), (0,0,0,0))
-# top = 0
-# for im in ins:
-# 	inim.paste(im, ((mw - im.size[0]) // 2, top))
-# 	top += im.size[1] + space
-# inim.save(txt_name.format('intro'))
 
 with Image.open('qr.png') as qr:
 	result[0][0][1] = process(logic, 'intro')
